@@ -25,6 +25,7 @@ config.module.loaders = [
 ]
 
 config.devServer = {
+  publicPath: config.output.publicPath,
   hot: true,
   inline: true,
   lazy: false,
