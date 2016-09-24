@@ -25,6 +25,7 @@ class Home extends Component {
 
 const styles = {
   Home: {
+    flex: 1,
     fontSize: '30px',
     display: 'flex',
     justifyContent: 'center',
