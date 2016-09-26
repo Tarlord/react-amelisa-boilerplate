@@ -22,8 +22,7 @@ class Page extends Component {
   }
 
   render () {
-    let { children, user } = this.props
-
+    let { children, user = {} } = this.props
     return React.cloneElement(children, {me: user})
   }
 }

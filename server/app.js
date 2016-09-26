@@ -53,7 +53,6 @@ function matchUrl (location, routes) {
   return new Promise((resolve, reject) => {
     match({routes, location}, (err, redirectLocation, renderProps) => {
       if (err) return reject(err)
-
       resolve({redirectLocation, renderProps})
     })
   })

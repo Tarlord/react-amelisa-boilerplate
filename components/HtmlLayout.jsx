@@ -1,5 +1,4 @@
 import React, { Component, PropTypes } from 'react'
-import { sheets } from 'jss'
 
 class HtmlLayout extends Component {
 
@@ -17,6 +16,11 @@ class HtmlLayout extends Component {
     let { app, children, model } = this.props
     let json = model.getBundleJson()
 
+    let style
+    if (process.env.NODE_ENV !== 'development') {
+      style = <link href={`/css/apps/${app}.styles.css`} rel='stylesheet' type='text/css' />
+    }
+
     return (
       <html>
         <head>
@@ -24,7 +28,7 @@ class HtmlLayout extends Component {
           <meta httpEquiv='Content-Type' content='text/html; charset=utf-8' />
           <meta name='viewport' content='width=device-width, initial-scale=1.0' />
           <meta charSet='utf-8' />
-          <style type='text/css' id='server-side-styles'>{sheets.toString()}</style>
+          {style}
         </head>
         <body>
           <div id='root'>{children}</div>

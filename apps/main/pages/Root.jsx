@@ -10,11 +10,6 @@ class Root extends RootComponent {
     children: PropTypes.element
   }
 
-  componentDidMount () {
-    let { model } = this.props
-    window.onresize = () => model.emit('resize')
-  }
-
   render () {
     let { children } = this.props
     // server rendering is disabled intentionally, because we do not need it
